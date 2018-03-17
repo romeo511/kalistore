@@ -1,0 +1,76 @@
+<body class="<?php echo 'style'.rand(1,4); ?>">
+    <header>
+        <div class="wrapper">
+            <h1><a href="./"><?php echo $meta['title']; ?></a></h1>
+        </div>
+    </header>
+    
+    <div id="mpage" class="wrapper">
+        <div class="form">
+            <form id="login" <?php if ($Logedin == true) { echo 'class="hidden"'; } ?> action="" method="post">
+                <div class="center">
+                    <div class="title">قم بتسجيل الدخول أولا</div>
+                </div>
+                <div class="container">
+                    <input type="text" name="username" placeholder="اسم المستخدم" value="" />
+                    <input type="password" name="pwd" placeholder="كلمة المرور" value="" />
+                    <div class="ie hidden">بيانات تسجيل الدخول غير صحيحة.</div>
+                    <div class="id hidden">تم تسجيل الدخول بنجاح.</div>
+                </div>
+                <input type="submit" class="btn btn-blue" value="تسجيل الدخول" />
+                <div class="clear"></div>
+            </form>
+            
+            <form id="upload" <?php if ($Logedin != true) { echo 'class="hidden"'; } ?> action="" method="post">
+                <div class="center">
+                    <div class="title">قم بإضافة أبليكشن جديد</div>
+                </div>
+                <div class="container">
+                    <input type="file" class="hidden" name="file" />
+                    <input type="file" class="hidden" name="image" />
+                    
+                    <div>
+                        <div class="width50">
+                            <input type="button" class="app" value="التطبيق" />
+                        </div>
+                        <div class="width50 last">
+                            <input type="button" class="image" value="الصورة" />
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    
+                    <input type="text" name="title" placeholder="اسم التطبيق" value="" maxlength="150" />
+                    <textarea name="desc" placeholder="وصف التطبيق"></textarea>
+                </div>
+                
+                <div class="ie hidden">ملف التطبيق غير صحيح.</div>
+                <div class="id hidden">تمت إضافة التطبيق بنجاح.</div>
+                
+                
+                <div class="progress-bar hidden">
+                    <div></div><span>30%</span>
+                </div>
+                <div id="results"></div>
+                
+                
+                <input type="submit" class="btn btn-gray btn-green btn-upload" value="إضافة التطبيق" />
+                <a class="logout" href="#">تسجيل الخروج</a>
+                <div class="clear"></div>
+            </form>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <footer></footer>
+    
+    <script src="css-js/smart.js"></script>
+    <script>
+    var a = $(window).height();
+    var b = $('header').height() + $('#mpage').height();
+    var c = $('footer').height();
+    if (a > (b+c)) {
+        var d = a - c;
+        $('#mpage').css('height', (a-$('header').outerHeight()-$('footer').outerHeight())+'px');
+    }    
+    </script>
+</body>

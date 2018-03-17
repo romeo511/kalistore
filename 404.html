@@ -1,0 +1,32 @@
+<body class="<?php echo 'style'.rand(1,4); ?>">
+    <header>
+        <div class="wrapper">
+            <h1><a href="./"><?php echo $meta['title']; ?></a></h1>
+        </div>
+    </header>
+    
+    <div id="mpage" class="wrapper">
+        <div class="div404">
+            <div class="title">الصفحة المطلوبة غير موجودة !!</div><br /><br />
+            <div>
+                برجاء التأكد من الرابط أو مراسلة إدارة الموقع بخصوص هذه المشكلة.<br /><br />
+                
+                <strong class="orange">&raquo;</strong> <a href="#" class="bold color" onclick="history.back();return false;">العودة حيث كنت</a><br />
+                <strong class="blue">&raquo;</strong> <a href="./" class="bold color">العودة للصفحة الرئيسية</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer></footer>
+    
+    <script src="css-js/smart.js"></script>
+    <script>
+    var a = $(window).height();
+    var b = $('header').height() + $('#mpage').height();
+    var c = $('footer').height();
+    if (a > (b+c)) {
+        var d = a - c;
+        $('#mpage').css('height', (a-$('header').outerHeight()-$('footer').outerHeight())+'px');
+    }    
+    </script>
+</body>

@@ -1,0 +1,17 @@
+RewriteEngine on
+
+Options -Indexes 
+
+RewriteBase /upload
+
+RewriteRule ^(/?)+$ index.php?page=form [QSA,L]
+
+#Dashboard
+RewriteRule ^mod$ index.php?page=moderator [QSA,L]
+
+# Custom Pages & 404
+RewriteRule ^404$ index.php?page=404 [L]
+
+# Errors
+ErrorDocument 403 http://localhost/app/404
+ErrorDocument 404 http://localhost/app/404

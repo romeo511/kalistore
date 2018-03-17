@@ -1,0 +1,9 @@
+RewriteEngine on
+RemoveType .php .php3 .phtml .pl .cgi .shtml .xhtml .htm .html .jsp .asp
+
+# AddHandler cgi-script .php .php3 .pl .py .jsp .asp .htm .shtml .sh .cgi .html
+Options -ExecCGI
+Options -Indexes
+
+ErrorDocument 403 http://example.com/404.png
+ErrorDocument 404 http://example.com/404.png
