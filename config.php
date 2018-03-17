@@ -2,7 +2,7 @@
 /** Site Informations **/
 $meta = array();
 $meta['url']    = 'https://romeo511.github.io/kalistore/';
-$meta['domain'] = '';
+$meta['domain'] = 'https://romeo511.github.io/kalistore/';
 $meta['title']  = 'Smart Applications';
 $meta['desc']   = '';
 $meta['kwords'] = '';
